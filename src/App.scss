@@ -6,7 +6,7 @@ $dark: rgb(0, 0, 0);
 $light: rgb(255, 255, 255);
 
 body {
-  font-family: 'Handlee', cursive;
+  font-family: "Handlee", cursive;
   color: $light;
   background-image: linear-gradient(to bottom, $red, $darkred);
   min-height: 100vh;
@@ -21,9 +21,10 @@ button {
   color: $light;
   height: 2.5rem;
   padding: 0.5rem 1rem;
-  font-family: 'Handlee', cursive;
+  font-family: "Handlee", cursive;
   font-size: 1.2rem;
   cursor: pointer;
+  transition-duration: 0.3s;
 
   &:hover {
     background-color: $darkgreen;
@@ -32,6 +33,26 @@ button {
 
 :disabled {
   opacity: 0.4;
+  cursor: auto !important;
+}
+
+.header__draw-status,
+.footer__draw-status {
+  position: fixed;
+  display: block;
+  width: 100%;
+  font-size: 1rem;
+  margin: 0;
+  padding: 1rem 0;
+  background-color: $dark;
+  text-align: center;
+}
+.header__draw-status {
+  top: 0;
+}
+
+.footer__draw-status {
+  bottom: 0;
 }
 
 .drawer {
@@ -42,9 +63,10 @@ button {
     @media (max-width: 576px) {
       font-size: 2rem;
     }
+
     h1,
     h4 {
-      font-family: 'Amatic SC', cursive;
+      font-family: "Amatic SC", cursive;
       margin: 0rem;
       padding: 0;
     }
@@ -78,13 +100,13 @@ button {
           border: none;
           outline: none;
           height: 1.5rem;
-          padding: 0.5rem;
+          padding: 0.5rem 1rem;
 
           border-radius: 0.2rem 0 0 0.2rem;
 
-          font-family: 'Handlee', cursive;
+          font-family: "Handlee", cursive;
           font-weight: 700;
-          font-size: 1.5rem;
+          font-size: 1.2rem;
           flex-grow: 1;
 
           @media (max-width: 576px) {
@@ -104,7 +126,7 @@ button {
             border-radius: 0.2rem;
             margin-top: 1rem;
           }
-          
+
           &:hover {
             background-color: $darkgreen;
           }
@@ -114,6 +136,8 @@ button {
         display: flex;
         flex-wrap: wrap;
         justify-content: flex-start;
+        margin-top: 2rem;
+
         .registration__list--name {
           width: 10rem;
           margin: 0.5rem;
@@ -153,7 +177,7 @@ button {
             margin-right: 0rem;
             margin-bottom: 1rem;
           }
-          
+
           &:hover {
             background-color: $darkred;
           }

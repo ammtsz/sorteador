@@ -26,7 +26,7 @@ function App() {
     event.preventDefault();
     setNamesList([...namesList, newName]);
 
-    setNewName("")
+    setNewName("");
   };
 
   // SAVE NEW NAME ADDED ON INPUT =====================================================
@@ -53,9 +53,9 @@ function App() {
     await firestore
       .collection("status")
       .doc("aN9PyAoG8ttS3RK3L7ur")
-      .update({started: status});
+      .update({ started: status });
 
-      getStatus();
+    getStatus();
   };
 
   // UPDATE LIST ON FIRESTORE =========================================================
@@ -109,12 +109,18 @@ function App() {
 
   useEffect(() => {
     getList();
-    getStatus()
+    getStatus();
   }, [drawList, started]);
 
   return (
     <div className="drawer">
       <header className="header">
+        {started ? (
+          <div className="header__draw-status">
+            <span>ATENÇÃO: SORTEIO EM ANDAMENTO</span>
+          </div>
+        ) : null}
+
         <h1>AMIGO SECRETO</h1>
         <h4>Natal 2020</h4>
       </header>
@@ -126,7 +132,7 @@ function App() {
           >
             <input
               type="text"
-              placeholder="Insira o nome do participante"
+              placeholder="Cadastrar participante"
               name="name"
               value={newName}
               autoComplete="off"
@@ -134,11 +140,12 @@ function App() {
                 handleChange(event);
               }}
             />
+
             <button
               type="submit"
               id="register-btn"
-              disabled={started}
               className="registration__form--btn"
+              disabled={started}
             >
               Cadastrar
             </button>
@@ -149,9 +156,10 @@ function App() {
               <span key={index} className="registration__list--name">
                 <button
                   className="registration__list--delete-btn"
+                  disabled={started}
                   onClick={() => deleteName(index)}
                 >
-                  <i className="fas fa-trash-alt"></i>
+                  {!started ? <i className="fas fa-trash-alt"></i> : null}
                 </button>
                 {name}
               </span>
@@ -192,6 +200,7 @@ function App() {
           </p>
         </section>
       </main>
+      
     </div>
   );
 }
