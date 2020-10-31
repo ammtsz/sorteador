@@ -25,7 +25,8 @@ function App() {
   const updateList = (event) => {
     event.preventDefault();
     setNamesList([...namesList, newName]);
-    console.log(namesList);
+
+    setNewName("")
   };
 
   // SAVE NEW NAME ADDED ON INPUT =====================================================
@@ -108,12 +109,14 @@ function App() {
 
   useEffect(() => {
     getList();
+    getStatus()
   }, [drawList, started]);
 
   return (
     <div className="drawer">
       <header className="header">
-        <h1>AMIGO SECRETO - NATAL 2020</h1>
+        <h1>AMIGO SECRETO</h1>
+        <h4>Natal 2020</h4>
       </header>
       <main className="main">
         <section className="registration">
@@ -124,7 +127,7 @@ function App() {
           >
             <input
               type="text"
-              placeholder="Insira o nome do participanete"
+              placeholder="Insira o nome do participante"
               name="name"
               value={newName}
               autoComplete="off"
