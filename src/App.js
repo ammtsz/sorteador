@@ -45,7 +45,7 @@ function App() {
       .doc("aN9PyAoG8ttS3RK3L7ur")
       .get();
 
-    return status.data().started;
+    setStarted(status.data().started);
   };
 
   const updateStatus = async (status) => {
@@ -54,7 +54,7 @@ function App() {
       .doc("aN9PyAoG8ttS3RK3L7ur")
       .update({started: status});
 
-    setStarted(status);
+      getStatus();
   };
 
   // UPDATE LIST ON FIRESTORE =========================================================
@@ -143,7 +143,7 @@ function App() {
           </form>
 
           <section className="registration__list">
-            {namesList.map((name, index) => (
+            {namesList.sort().map((name, index) => (
               <span key={index} className="registration__list--name">
                 <button
                   className="registration__list--delete-btn"
