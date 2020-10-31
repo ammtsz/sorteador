@@ -1,0 +1,145 @@
+$darkred: rgb(72, 0, 0);
+$red: rgb(165, 0, 0);
+$darkgreen: rgb(0, 60, 0);
+$green: rgb(0, 145, 0);
+$dark: rgb(0, 0, 0);
+$light: rgb(255, 255, 255);
+
+body {
+  font-family: "Amatic SC", cursive;
+  color: $light;
+  background-image: linear-gradient(to bottom, $red, $darkred);
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  background-color: $green;
+  border: none;
+  border-radius: 0.2rem;
+  color: $light;
+  height: 2.5rem;
+  padding: 0.5rem 1rem;
+}
+
+:disabled {
+  opacity: 0.6;
+}
+
+.drawer {
+  .header {
+    font-size: 3rem;
+    text-align: center;
+    padding-top: 3rem;
+    h1 {
+      margin: 0rem;
+    }
+  }
+  .main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    padding: 0 5vw;
+    box-sizing: border-box;
+
+    .registration {
+      margin: auto;
+      width: 60vw;
+      .registration__title {
+        font-size: 2rem;
+        margin: 1rem;
+      }
+      .registration__form {
+        display: flex;
+        input {
+          width: 100%;
+          border: none;
+          outline: none;
+          height: 1.5rem;
+          padding: 0.5rem;
+
+          border-radius: 0.2rem 0 0 0.2rem;
+
+          font-family: "Amatic SC", cursive;
+          font-weight: 700;
+          font-size: 1.5rem;
+        }
+        .registration__form--btn {
+          background-color: $green;
+          border: none;
+          border-radius: 0 0.2rem 0.2rem 0;
+          color: $light;
+          height: 2.5rem;
+          padding: 0.5rem 1rem;
+        }
+      }
+      .registration__list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        .registration__list--name {
+          width: 40%;
+          margin: 0.5rem;
+          font-size: 1.5rem;
+
+          .registration__list--delete-btn {
+            background-color: transparent;
+            color: $light;
+            border: none;
+            cursor: pointer;
+
+            &:hover {
+              color: $red;
+            }
+          }
+        }
+      }
+      .registration__buttons {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+
+        margin-top: 1rem;
+
+        .registration__buttons--stop {
+          cursor: pointer;
+          margin-right: 1rem;
+          &:hover {
+            background-color: $darkgreen;
+          }
+        }
+        .registration__buttons--start {
+          cursor: pointer;
+          &:hover {
+            background-color: $darkgreen;
+          }
+        }
+      }
+    }
+
+    .picker {
+      margin: 5rem auto;
+      width: 60vw;
+
+      .picker__remaining {
+        font-size: 1.5rem;
+        text-align: center;
+      }
+      .picker__draw--btn {
+        width: 100%;
+      }
+      .picker__draw--name {
+        font-size: 3rem;
+        text-align: center;
+      }
+
+      .picker__draw--text {
+        text-align: center;
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
