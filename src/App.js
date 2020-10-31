@@ -39,6 +39,24 @@ function App() {
     setNamesList(newList);
   };
 
+  const getStatus = async () => {
+    const status = await firestore
+      .collection("status")
+      .doc("aN9PyAoG8ttS3RK3L7ur")
+      .get();
+
+    return status.data().started;
+  };
+
+  const updateStatus = async (status) => {
+    await firestore
+      .collection("status")
+      .doc("aN9PyAoG8ttS3RK3L7ur")
+      .update({started: status});
+
+    setStarted(status);
+  };
+
   // UPDATE LIST ON FIRESTORE =========================================================
   const updateFirestore = async () => {
     await firestore
@@ -50,7 +68,7 @@ function App() {
   // UPDATE DRAW LIST ON FIRESTORE ================================================
   const startDraw = async () => {
     updateFirestore();
-    setStarted(true);
+    updateStatus(true);
 
     await firestore
       .collection("drawList")
@@ -62,7 +80,7 @@ function App() {
 
   // DISABLE REGISTER-NEW-NAME BUTTON ================================================
   const stopDraw = () => {
-    setStarted(false);
+    updateStatus(false);
   };
 
   // PICK A NAME FROM LIST AND DELETE FROM LIST NAME LOCALLY ==========================
@@ -71,17 +89,17 @@ function App() {
       .collection("drawList")
       .doc("4GmI6OEzxiStJmjf70i9")
       .get();
-    
-    const newDrawList = drawListFirestore.data().natal
+
+    const newDrawList = drawListFirestore.data().natal;
 
     const limit = newDrawList.length;
 
     const i = Math.floor(Math.random() * limit);
 
     setPick(newDrawList[i]);
-    
+
     const newList = newDrawList.filter((name, index) => index !== i);
-    setDrawList(newList)
+    setDrawList(newList);
     await firestore
       .collection("drawList")
       .doc("4GmI6OEzxiStJmjf70i9")
@@ -90,7 +108,7 @@ function App() {
 
   useEffect(() => {
     getList();
-  }, [drawList]);
+  }, [drawList, started]);
 
   return (
     <div className="drawer">
