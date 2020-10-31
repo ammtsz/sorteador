@@ -120,7 +120,6 @@ function App() {
       </header>
       <main className="main">
         <section className="registration">
-          <h4 className="registration__title">Cadastramento</h4>
           <form
             className="registration__form"
             onSubmit={(event) => updateList(event)}

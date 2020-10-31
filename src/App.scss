@@ -6,7 +6,7 @@ $dark: rgb(0, 0, 0);
 $light: rgb(255, 255, 255);
 
 body {
-  font-family: "Amatic SC", cursive;
+  font-family: 'Handlee', cursive;
   color: $light;
   background-image: linear-gradient(to bottom, $red, $darkred);
   min-height: 100vh;
@@ -21,6 +21,8 @@ button {
   color: $light;
   height: 2.5rem;
   padding: 0.5rem 1rem;
+  font-family: 'Handlee', cursive;
+  font-size: 1.2rem;
   cursor: pointer;
 
   &:hover {
@@ -29,7 +31,7 @@ button {
 }
 
 :disabled {
-  opacity: 0.6;
+  opacity: 0.4;
 }
 
 .drawer {
@@ -42,6 +44,7 @@ button {
     }
     h1,
     h4 {
+      font-family: 'Amatic SC', cursive;
       margin: 0rem;
       padding: 0;
     }
@@ -64,10 +67,6 @@ button {
         width: 80vw;
       }
 
-      .registration__title {
-        font-size: 2rem;
-        margin: 1rem;
-      }
       .registration__form {
         display: flex;
 
@@ -83,7 +82,7 @@ button {
 
           border-radius: 0.2rem 0 0 0.2rem;
 
-          font-family: "Amatic SC", cursive;
+          font-family: 'Handlee', cursive;
           font-weight: 700;
           font-size: 1.5rem;
           flex-grow: 1;
@@ -105,7 +104,7 @@ button {
             border-radius: 0.2rem;
             margin-top: 1rem;
           }
-
+          
           &:hover {
             background-color: $darkgreen;
           }
@@ -148,12 +147,15 @@ button {
         .registration__buttons--stop {
           cursor: pointer;
           margin-right: 1rem;
+          background-color: $red;
+
           @media (max-width: 576px) {
             margin-right: 0rem;
             margin-bottom: 1rem;
           }
+          
           &:hover {
-            background-color: $darkgreen;
+            background-color: $darkred;
           }
         }
         .registration__buttons--start {
