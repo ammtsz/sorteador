@@ -4,14 +4,14 @@ import "firebase/firestore";
 import "firebase/storage";
 
 const config = {
-  apiKey: "AIzaSyCsrOJlUQUCllA7PG3FrLM0BI0cPQvs37k",
-  authDomain: "sorteador-3d351.firebaseapp.com",
-  databaseURL: "https://sorteador-3d351.firebaseio.com",
-  projectId: "sorteador-3d351",
-  storageBucket: "sorteador-3d351.appspot.com",
-  messagingSenderId: "918339936487",
-  appId: "1:918339936487:web:02d2ac9f4fc4032ba94242",
-  measurementId: "G-0X0WL2CTE3",
+  apiKey: "AIzaSyBtC33N0ifehu3Afh0b3AZBxAn8JfcxQXI",
+  authDomain: "drawer-64ee3.firebaseapp.com",
+  databaseURL: "https://drawer-64ee3.firebaseio.com",
+  projectId: "drawer-64ee3",
+  storageBucket: "drawer-64ee3.appspot.com",
+  messagingSenderId: "474754218033",
+  appId: "1:474754218033:web:6589325b3aebaf9a2dfd10",
+  measurementId: "G-S2F2L28V8M",
 };
 
 firebase.initializeApp(config);
