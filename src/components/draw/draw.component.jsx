@@ -71,11 +71,12 @@ const Draw = () => {
   };
 
   const getDrawList = async () => {
-    firestore
-      .collection("drawnList")
-      .onSnapshot((snapshot) =>
-        snapshot.forEach((list) => setDrawList(list.data().natal))
-      );
+    firestore.collection("drawList").onSnapshot((snapshot) =>
+      snapshot.forEach((list) => {
+        setDrawList(list.data().natal);
+      })
+    );
+    console.log(drawList)
   };
 
   useEffect(() => {

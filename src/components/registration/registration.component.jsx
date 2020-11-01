@@ -18,7 +18,7 @@ const Registration = () => {
     firestore.collection("namesList").onSnapshot((snapshot) => {
       snapshot.forEach((list) => {
         setNamesList(list.data().natal);
-        setDrawList(list.data().natal);
+        if(!started) setDrawList(list.data().natal);
       });
     });
 
