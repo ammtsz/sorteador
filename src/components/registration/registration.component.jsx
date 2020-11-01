@@ -18,23 +18,29 @@ const Registration = () => {
     firestore.collection("namesList").onSnapshot((snapshot) => {
       snapshot.forEach((list) => {
         setNamesList(list.data().natal);
-        if(!started) setDrawList(list.data().natal);
+        if (!started) setDrawList(list.data().natal);
       });
     });
 
-    setPick("")
+    setPick("");
   };
 
   const updateList = async (event) => {
     event.preventDefault();
 
-    await firestore
-      .collection("namesList")
-      .doc("6r9CHwmpUKbpokzfOrwy")
-      .update({ natal: [...namesList, newName] });
+    if (newName === "") {
+      window.confirm("Digite um nome antes de adicinar à lista");
+    } else if (namesList.indexOf(newName) > -1) {
+      window.confirm("Nome já cadastro. Digite outro nome!");
+    } else {
+      await firestore
+        .collection("namesList")
+        .doc("6r9CHwmpUKbpokzfOrwy")
+        .update({ natal: [...namesList, newName] });
 
-    setNamesList([...namesList, newName]);
-    setNewName("");
+      setNamesList([...namesList, newName]);
+      setNewName("");
+    }
   };
 
   const deleteName = async (i) => {
@@ -70,9 +76,10 @@ const Registration = () => {
         setData={setNewName}
         value={newName}
         equalStarted={false}
-        placeholder="Cadastrar participante"
+        placeholder="Adicionar novo participante"
+        disabled={started}
         name="name"
-        btnContent="Cadastrar"
+        btnContent="Adicionar"
       />
 
       <section className="registration__list">

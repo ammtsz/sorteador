@@ -22,7 +22,7 @@ const Confirmation = () => {
   return drawnNames.length === 0 ? null : (
     <section className="confirmation">
       <Button
-        content="Ver nomes sorteados"
+        content="Conferir nomes sorteados"
         equalStarted={!showDrawnList && drawList.length === 0}
         onClick={() => {
           setShowDrawnList(true);
@@ -32,6 +32,7 @@ const Confirmation = () => {
       {showDrawnList && drawList.length === 0 ? (
         <div>
           <h2 className="confirmation__title">Nomes Sorteados</h2>
+          <p className="confirmation__subtitle">(em ordem alfabética)</p>
 
           {drawnNames.sort().map((name, key) => (
             <span key={key}>

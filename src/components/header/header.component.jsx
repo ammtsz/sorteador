@@ -43,7 +43,7 @@ const Registration = () => {
               className="registration__buttons--stop"
               onClick={() => stopDraw()}
             >
-              Recomeçar Sorteio
+              Cancelar sorteio
             </button>
           </span>
         </div>

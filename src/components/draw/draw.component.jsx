@@ -111,7 +111,7 @@ const Draw = () => {
 
       {confirmDraw && drawList.length > 0 ? (
         <Button
-          content={"Novo Sorteio"}
+          content={"Sortear mais uma pessoa"}
           equalStarted={true}
           onClick={() => document.location.reload()}
           className="btn__right"
