@@ -1,4 +1,5 @@
 import React, { useContext, useEffect } from "react";
+import "./draw.styles.scss"
 
 import { firestore } from "../../firebase/firebase.utils";
 import DrawContext from "../../context/draw/draw.context";
@@ -85,11 +86,11 @@ const Draw = () => {
   }, []);
 
   return (
-    <section className="picker">
+    <section className="draw">
       {drawList.length === 0 && started ? null : (
         <Button
           content={"Sortear"}
-          className="picker__draw--btn"
+          className="btn__width--100"
           onClick={() => draw()}
           equalStarted={true}
           id="draw-btn"
@@ -98,12 +99,12 @@ const Draw = () => {
 
       {pick && started && confirmDraw ? (
         <React.Fragment>
-          <p className="picker__draw--text">Você tirou @:</p>
-          <p className="picker__draw--name">{pick}</p>
+          <p className="draw__text">Você tirou @:</p>
+          <p className="draw__name">{pick}</p>
         </React.Fragment>
       ) : null}
 
-      <p className="picker__remaining">
+      <p className="draw__remaining">
         {drawList.length === 0
           ? "Sorteio Finalizado!"
           : `${drawList.length} sorteios restantes`}

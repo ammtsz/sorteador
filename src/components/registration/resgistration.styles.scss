@@ -1,0 +1,48 @@
+@import "../../variables.scss";
+
+.registration {
+  margin: auto;
+  width: 60vw;
+
+  @media (max-width: 576px) {
+    width: 80vw;
+  }
+
+  .registration__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-top: 2rem;
+
+    .registration__list--name {
+      width: 10rem;
+      margin: 0.5rem;
+      font-size: 1.5rem;
+
+      @media (max-width: 576px) {
+        width: 9rem;
+      }
+
+      .registration__list--delete-btn {
+        background-color: transparent;
+        color: $light;
+        border: none;
+        cursor: pointer;
+
+        &:hover {
+          color: $red;
+        }
+      }
+    }
+  }
+
+  .registration__buttons {
+    display: flex;
+    justify-content: flex-end;
+
+    margin-top: 1rem;
+    @media (max-width: 576px) {
+      flex-direction: column;
+    }
+  }
+}

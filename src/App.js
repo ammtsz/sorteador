@@ -22,7 +22,7 @@ function App() {
   useEffect(() => {}, [started]);
 
   return (
-    <div className="drawer">
+    <div className="drawer__app">
       <NamesListContext.Provider value={{ namesList, setNamesList }}>
         <DrawContext.Provider
           value={{

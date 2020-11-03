@@ -1,0 +1,60 @@
+@import "../../variables.scss";
+
+button {
+  background-color: $green;
+  border: none;
+  border-radius: 0.2rem;
+  color: $light;
+  height: 2.5rem;
+  padding: 0.5rem 1rem;
+  font-family: "Handlee", cursive;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition-duration: 0.3s;
+
+  &:hover {
+    background-color: $darkgreen;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: auto;
+
+    &:hover{
+        background-color: $green;
+    }
+  }
+}
+
+.btn__width--100 {
+  width: 100%;
+}
+
+.btn__right {
+  margin-left: auto;
+  display: block;
+}
+
+.btn__form {
+  border-radius: 0 0.2rem 0.2rem 0;
+
+  @media (max-width: 576px) {
+    flex-grow: 1;
+    border-radius: 0.2rem;
+    margin-top: 1rem;
+  }
+}
+
+.btn__cancel {
+    margin-left: 1rem;
+    background-color: $red;
+
+    @media (max-width: 576px) {
+      margin-right: 0rem;
+      margin-top: 1rem;
+    }
+
+    &:hover {
+      background-color: $darkred;
+    }
+  }

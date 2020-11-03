@@ -1,6 +1,9 @@
 import React, { useContext, useEffect } from "react";
+import "./header.styles.scss";
+
 import DrawContext from "../../context/draw/draw.context";
 import NamesListContext from "../../context/names-list/names-list.context";
+import Button from "../../components/button/button.component";
 
 import { firestore } from "../../firebase/firebase.utils";
 
@@ -23,7 +26,6 @@ const Registration = () => {
       setPick("");
 
       updateStatus(false);
-
     }
   };
 
@@ -37,14 +39,13 @@ const Registration = () => {
         <div className="header__draw-status">
           <span>
             ATENÇÃO: SORTEIO EM ANDAMENTO
-            <button
+            <Button
               disabled={!started}
               id="stop-draw"
-              className="registration__buttons--stop"
+              className="btn__cancel"
               onClick={() => stopDraw()}
-            >
-              Cancelar sorteio
-            </button>
+              content={"Cancelar sorteio"}
+            />
           </span>
         </div>
       ) : null}

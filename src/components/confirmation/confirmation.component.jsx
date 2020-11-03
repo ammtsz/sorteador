@@ -1,4 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
+import "./confirmation.styles.scss"
+
 import { firestore } from "../../firebase/firebase.utils";
 
 import DrawContext from "../../context/draw/draw.context";

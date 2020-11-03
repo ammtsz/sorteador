@@ -1,4 +1,6 @@
 import React, { useContext } from "react";
+import "./button.styles.scss"
+
 import { StatusContext } from "../../provider/status/status.provider";
 
 const Button = ({ content, equalStarted, ...otherProps }) => {
@@ -8,7 +10,6 @@ const Button = ({ content, equalStarted, ...otherProps }) => {
     <button
       type="submit"
       id="register-btn"
-      className="registration__form--btn"
       disabled={equalStarted ? !started : started}
       {...otherProps}
     >

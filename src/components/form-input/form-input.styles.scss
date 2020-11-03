@@ -1,0 +1,29 @@
+@import "../../variables.scss";
+
+.form {
+  display: flex;
+
+  @media (max-width: 576px) {
+    flex-direction: column;
+  }
+
+  input {
+    border: none;
+    outline: none;
+    height: 1.5rem;
+    padding: 0.5rem 1rem;
+
+    border-radius: 0.2rem 0 0 0.2rem;
+
+    font-family: "Handlee", cursive;
+    font-weight: 700;
+    font-size: 1.2rem;
+    flex-grow: 1;
+
+    @media (max-width: 576px) {
+      border-radius: 0.2rem;
+    }
+  }
+
+  
+}

@@ -1,0 +1,25 @@
+@import "../../variables.scss";
+
+.header__draw-status {
+  position: fixed;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  font-size: 1rem;
+  margin: 0;
+  padding: 1rem 0;
+  background-color: $dark;
+  text-align: center;
+
+  z-index: 1;
+
+  @media (min-width: 576px) {
+    top: 0;
+  }
+
+  @media (max-width: 576px) {
+    bottom: 0;
+  }
+
+ 
+}

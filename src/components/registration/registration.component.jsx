@@ -1,4 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
+import "./resgistration.styles.scss"
+
 import { firestore } from "../../firebase/firebase.utils";
 
 import FormInput from "../form-input/form-input.component";
@@ -102,7 +104,6 @@ const Registration = () => {
           content={"iniciar Sorteio"}
           equalStarted={false}
           id="start-draw"
-          className="registration__buttons--start"
           onClick={() => startDraw()}
         />
       </div>

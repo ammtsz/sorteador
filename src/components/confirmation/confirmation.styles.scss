@@ -1,0 +1,29 @@
+.confirmation {
+    width: 60vw;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+  
+    margin-bottom: 5rem;
+  
+    font-size: 2rem;
+  
+    @media (max-width: 576px) {
+      width: 80vw;
+    }
+  
+    .confirmation__title {
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    .confirmation__subtitle {
+      margin-top: 0;
+      padding-top: 0;
+    }
+  
+    span {
+      display: block;
+    }
+  }

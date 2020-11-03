@@ -1,0 +1,24 @@
+@import "../../variables.scss";
+
+.draw {
+  margin: 5rem auto;
+  width: 60vw;
+
+  @media (max-width: 576px) {
+    width: 80vw;
+  }
+
+  .draw__remaining {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .draw__name {
+    font-size: 3rem;
+    text-align: center;
+  }
+  .draw__text {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+}
