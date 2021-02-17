@@ -1,70 +1,88 @@
-# Getting Started with Create React App
+## Overview
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A drawer application initially developed to do a Secret Santa during the pandemic. It simulates the presential Secret Santa draw, where everyone is gather (in this case, everyone is online) and one by one pick a name, but since there is no need for log in, there is always the possibility of someone draw it's own name.
 
-## Available Scripts
+Check the deployed project [here](https://sorteador-ammtsz.herokuapp.com/)
 
-In the project directory, you can run:
 
-### `npm start`
+## Built With
 
-Runs the app in the development mode.\
+* [Create React App](https://github.com/facebook/create-react-app)
+* React Router
+* React Hooks
+* SASS
+* Firebase
+
+## Starting the project
+
+Clone the repository:
+
+`https://github.com/ammtsz/sorteador.git`
+
+Change directory:
+
+`cd sorteador`
+
+In the project directory, run:
+
+`npm install`
+
+`npm start`
+
+It will run the app in the development mode.
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
+### Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Firebase
 
-### Analyzing the Bundle Size
+This project is integrated with Firebase. To integrate it to your Firebase account:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+1. Create an account
+2. Go to console
+3. Click on 'Add project'
+4. Create your project
+5. Add an App (select 'Web' option)
+6. Register your web app
 
-### Making a Progressive Web App
+Once it is done, you will have a `firebaseConfig`. Copy those datas and replace it on the project. Go to `./src/firebase/firebase.utils.jsx` and replace it on:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```javascript
+const config = {
+    apiKey: "",
+    authDomain: "",
+    projectId: "",
+    storageBucket: "",
+    messagingSenderId: "",
+    appId: "",
+    measurementId: ""
+};
 
-### Advanced Configuration
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+The project uses 'Cloud Firestore' from Firebase, so you need to 'Create database' on Cloud Firestore.
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Dependencies
+```
+    "firebase": "^8.0.0",
+    "node-sass": "^4.14.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-scripts": "4.0.0",
+```
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Rules
+* add all participants names by adding name by name in the input field and clicking on 'Adicionar' button
+* start the draw by clicking on 'iniciar Sorteio' button
+* one participant at a time will click on 'Sortear' button (can be in different devices or not)
+* a name will be displayed
+* to draw another name on the same device, click on 'Sortear mais uma pessoa' otherwise, just wait until there is no more names left to draw
+* the amount of draws left is showed in real time
+* whenever it is needed, you can cancel the draw and start over
